@@ -4,9 +4,7 @@ import PartlyCloudyDayFog from "../../icons/weather-icons/partly-cloudy-day-fog.
 
 export const WeatherPanel = () => {
   const [weatherData, setWeatherData] = useState({});
-  const [currentTime, setCurrentTime] = useState(
-    new Date().toLocaleTimeString()
-  );
+  const [currentTime, setCurrentTime] = useState(new Date());
 
   useEffect(() => {
     fetch(
@@ -16,29 +14,20 @@ export const WeatherPanel = () => {
       .then((data) => setWeatherData(data));
 
     setInterval(() => {
-      setCurrentTime(new Date().toLocaleTimeString());
+      setCurrentTime(new Date());
     }, 1000);
   }, []);
 
   const weatherPanel = () => {
-    let hour = new Date().getHours();
-    let humidityData = weatherData.forecast.forecastday[0].hour;
-    let humidityInfo = humidityData.slice(hour - 1, hour + 3).map((item) => {
-      let time = new Date(item.time).toLocaleTimeString([], {
-        hour: "2-digit",
-        minute: "2-digit",
-      });
+    const HumidityInfo = () => {
       return (
-        <p key={item.time}>
-          {time} - Humidity: {item.humidity}%
-        </p>
+        <div>
+          <p>
+            Humidity {weatherData.forecast.forecastday[0].hour[0].humidity}%
+          </p>
+        </div>
       );
-    });
-
-    // const HumidityBar = () => {
-    //   return null;
-    // };
-
+    };
     return (
       <div>
         <div className="main">
@@ -49,7 +38,7 @@ export const WeatherPanel = () => {
                 {weatherData.location.region}, {weatherData.location.country}
               </p>
             </div>
-            <h2>{currentTime}</h2>
+            <h2>{currentTime.toLocaleTimeString()}</h2>
           </div>
           <div className="temperature">
             <img src={PartlyCloudyDayFog} />
@@ -59,8 +48,7 @@ export const WeatherPanel = () => {
           <div className="underline" />
         </div>
         <div className="info">
-          <h4>Humidity</h4>
-          {humidityInfo}
+          <HumidityInfo />
         </div>
       </div>
     );
