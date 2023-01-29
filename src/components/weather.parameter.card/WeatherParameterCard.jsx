@@ -1,6 +1,6 @@
 import React from "react";
 import "./WeatherParameterCardStyles.scss";
-import icon from "../../icons/weather-icons/wind.svg";
+import Wind from "../../assets/icons/weather-icons/wind.svg";
 
 export const WeatherParameterCard = () => {
   return (
@@ -11,7 +11,7 @@ export const WeatherParameterCard = () => {
         <h3>12km/h</h3>
       </div>
       <div className="icon">
-        <img src={icon} />
+        <img src={Wind} />
       </div>
     </div>
   );

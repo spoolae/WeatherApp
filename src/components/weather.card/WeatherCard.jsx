@@ -1,6 +1,6 @@
 import React from "react";
 import { Thermometer, MapPin, Wind, Droplet } from "react-feather";
-import { TemperatureChart } from "./TemperatureChart.jsx";
+import { TemperatureChart } from "../temperature.chart/TemperatureChart.jsx";
 import "./WeatherCardStyles.scss";
 
 export const WeatherCard = () => {

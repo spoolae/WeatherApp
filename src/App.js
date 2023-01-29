@@ -1,10 +1,10 @@
 import React from "react";
-import HomeScreen from "./assets/screens/HomeScreen.jsx";
+import HomeScreen from "./screens/HomeScreen.jsx";
 import "reset-css";
 import "./App.scss";
 
 import { Provider } from "react-redux";
-import store from "./assets/redux/configureStore.js";
+import store from "./redux/configureStore.js";
 import { PersistGate } from "redux-persist/integration/react";
 import { persistStore } from "redux-persist";
 
