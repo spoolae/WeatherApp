@@ -1,18 +1,25 @@
 import React from "react";
 import "./WeatherParameterCardStyles.scss";
-import Wind from "../../assets/icons/weather-icons/wind.svg";
+import PropTypes from "prop-types";
 
-export const WeatherParameterCard = () => {
+export const WeatherParameterCard = ({ data }) => {
   return (
     <div className="weather-parameter-card">
       <div className="info">
-        <h3>Wind</h3>
-        <p>Today wind speed</p>
-        <h3>12km/h</h3>
+        <h3>{data.name}</h3>
+        <p>{data.description}</p>
+        <h3>
+          {data.value}
+          {data.unit}
+        </h3>
       </div>
       <div className="icon">
-        <img src={Wind} />
+        <img src={data.icon} />
       </div>
     </div>
   );
+};
+
+WeatherParameterCard.propTypes = {
+  data: PropTypes.object,
 };
