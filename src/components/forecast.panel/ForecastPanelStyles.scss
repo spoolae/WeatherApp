@@ -1,0 +1,25 @@
+.forecast-panel {
+  //   height: 100vh;
+  border-left: 2px solid rgb(235, 235, 235);
+
+  .heading {
+    display: flex;
+    justify-content: space-between;
+    padding: 50px;
+  }
+
+  .today-cards {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 15px;
+  }
+
+  .week-cards {
+    padding: 0 15px;
+
+    > h3 {
+      padding: 50px;
+      text-align: center;
+    }
+  }
+}

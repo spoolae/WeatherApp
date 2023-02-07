@@ -12,6 +12,7 @@ import Wind from "../assets/icons/weather-icons/wind.svg";
 import Humidity from "../assets/icons/weather-icons/raindrop-measure.svg";
 import Pressure from "../assets/icons/weather-icons/barometer.svg";
 import UV from "../assets/icons/weather-icons/uv-index.svg";
+import { ForecastPanel } from "../components/forecast.panel/ForecastPanel.jsx";
 
 export const HomeScreen = ({ weather }) => {
   const dispatch = useDispatch();
@@ -21,6 +22,7 @@ export const HomeScreen = ({ weather }) => {
     console.log(weather.data);
   }, []);
 
+  //should be imported from consts
   const weatherParameters = [
     {
       name: "Wind",
@@ -62,10 +64,12 @@ export const HomeScreen = ({ weather }) => {
           ))}
         </div>
       </div>
+      <ForecastPanel />
     </div>
   );
 };
 
+// need to something about it
 HomeScreen.propTypes = {
   weather: PropTypes.object,
 };

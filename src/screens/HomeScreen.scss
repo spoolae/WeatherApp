@@ -1,8 +1,9 @@
 .home-screen {
-  padding: 50px;
+  display: flex;
 
   .main {
-    width: 65vw;
+    padding: 50px;
+    width: 60vw;
     min-width: min-content;
     flex-grow: 4;
     display: flex;
@@ -17,5 +18,9 @@
       gap: 50px;
       flex-wrap: wrap;
     }
+  }
+
+  .forecast-panel {
+    width: 30vw;
   }
 }
