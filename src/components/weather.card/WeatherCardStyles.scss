@@ -69,7 +69,6 @@ $text-color: rgb(13, 64, 109);
   }
 
   .temperature {
-    // min-width: min-content;
     width: 50%;
     height: 300px;
     display: flex;
@@ -77,6 +76,6 @@ $text-color: rgb(13, 64, 109);
     justify-content: space-between;
     background-color: rgba(255, 255, 255, 0.25);
     border-radius: 10px;
-    padding: 15px;
+    padding: 25px;
   }
 }

@@ -17,14 +17,14 @@ export const ForecastPanel = ({ weather }) => {
     switch (i) {
       case 0:
         return {
-          day,
+          day: "Today",
           date,
           condition: item.day.condition.text,
           temperature: Math.round(item.day.avgtemp_c),
         };
       case 1:
         return {
-          day,
+          day: "Tommorow",
           date,
           condition: item.day.condition.text,
           temperature: Math.round(item.day.avgtemp_c),

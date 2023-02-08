@@ -4,6 +4,11 @@
   box-sizing: border-box;
 }
 
+img,
+svg {
+  user-select: none;
+}
+
 body {
   font-family: "Poppins", sans-serif;
 }
