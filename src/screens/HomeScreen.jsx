@@ -64,7 +64,7 @@ export const HomeScreen = ({ weather }) => {
           ))}
         </div>
       </div>
-      <ForecastPanel />
+      <ForecastPanel weather={weather} />
     </div>
   );
 };
