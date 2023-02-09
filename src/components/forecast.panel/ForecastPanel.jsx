@@ -3,9 +3,13 @@ import PropTypes from "prop-types";
 import "./ForecastPanelStyles.scss";
 import { ArrowLeft, ArrowRight } from "react-feather";
 import { VerticalTemperatureCard } from "../vertical.temperature.card/VerticalTemperatureCard.jsx";
-import { HorizontalTemperatureCard } from "../horizontal.temperature.card/HorizontalTemperatureCard.jsx";
+import {
+  EmptyHorizontalTemperatureCard,
+  HorizontalTemperatureCard,
+} from "../horizontal.temperature.card/HorizontalTemperatureCard.jsx";
 
 export const ForecastPanel = ({ weather }) => {
+  //what a mess. need to fix that
   const weekForecastData = weather.data.forecast.forecastday.map((item, i) => {
     let day = new Date(item.date).toLocaleDateString("en-US", {
       weekday: "long",
@@ -84,6 +88,9 @@ export const ForecastPanel = ({ weather }) => {
         {weekForecastData.map((item, i) => (
           <HorizontalTemperatureCard item={item} key={i} />
         ))}
+        {weekForecastData.length < 7 ? (
+          <EmptyHorizontalTemperatureCard />
+        ) : null}
       </div>
     </div>
   );
