@@ -1,6 +1,7 @@
 import React from "react";
-import "./WeatherParameterCardStyles.scss";
 import PropTypes from "prop-types";
+
+import "./WeatherParameterCardStyles.scss";
 
 export const WeatherParameterCard = ({ data }) => {
   return (

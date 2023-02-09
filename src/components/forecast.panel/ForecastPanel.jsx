@@ -1,55 +1,17 @@
 import React, { useState } from "react";
 import PropTypes from "prop-types";
+
 import "./ForecastPanelStyles.scss";
 import { ArrowLeft, ArrowRight } from "react-feather";
 import { VerticalTemperatureCard } from "../vertical.temperature.card/VerticalTemperatureCard.jsx";
-import {
-  EmptyHorizontalTemperatureCard,
-  HorizontalTemperatureCard,
-} from "../horizontal.temperature.card/HorizontalTemperatureCard.jsx";
+import { HorizontalTemperatureCard } from "../horizontal.temperature.card/HorizontalTemperatureCard.jsx";
+import { EmptyHorizontalTemperatureCard } from "../horizontal.temperature.card/EmptyHorizontalTemperatureCard.jsx";
+import { getWeekForecastData } from "../../constants/getWeekForecastData";
+import { getDayForecastData } from "../../constants/getDayForecastData";
 
 export const ForecastPanel = ({ weather }) => {
-  //what a mess. need to fix that
-  const weekForecastData = weather.data.forecast.forecastday.map((item, i) => {
-    let day = new Date(item.date).toLocaleDateString("en-US", {
-      weekday: "long",
-    });
-    let date = new Date(item.date).toLocaleDateString("en-US", {
-      day: "numeric",
-      month: "short",
-    });
-    switch (i) {
-      case 0:
-        return {
-          day: "Today",
-          date,
-          condition: item.day.condition.text,
-          temperature: Math.round(item.day.avgtemp_c),
-        };
-      case 1:
-        return {
-          day: "Tommorow",
-          date,
-          condition: item.day.condition.text,
-          temperature: Math.round(item.day.avgtemp_c),
-        };
-      default:
-        return {
-          day,
-          date,
-          condition: item.day.condition.text,
-          temperature: Math.round(item.day.avgtemp_c),
-        };
-    }
-  });
-
-  const dayForecastData = weather.data.forecast.forecastday[0].hour.map(
-    (item) => ({
-      time: item.time.split(" ")[1],
-      condition: item.condition.text,
-      temperature: Math.round(item.temp_c),
-    })
-  );
+  const weekForecastData = getWeekForecastData({ weather });
+  const dayForecastData = getDayForecastData({ weather });
 
   const [page, setPage] = useState(0);
   const itemsPerPage = 3;

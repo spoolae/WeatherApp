@@ -1,14 +1,10 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { LineChart, Line, XAxis, Tooltip, ResponsiveContainer } from "recharts";
+import { getChartData } from "../../constants/getChartData";
 
 export const TemperatureChart = ({ weather }) => {
-  const chartData = weather.data.forecast.forecastday[0].hour
-    .filter((item, i) => (i - 2) % 3 === 0)
-    .map((item) => ({
-      time: item.time.split(" ")[1],
-      t: item.temp_c,
-    }));
+  const chartData = getChartData({ weather });
 
   return (
     <ResponsiveContainer width="100%" height="60%">

@@ -1,32 +1,21 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import PropTypes from "prop-types";
 import { Thermometer, MapPin, Wind, Droplet } from "react-feather";
 
 import "./WeatherCardStyles.scss";
 import { TemperatureChart } from "../temperature.chart/TemperatureChart.jsx";
+import { getLocalTime } from "../../constants/getLocalTime";
+import { getWeatherCardConstants } from "../../constants/getWeatherCardConstants";
 
 export const WeatherCard = ({ weather }) => {
-  const cityName = weather.data.location.name;
-  const temperature = weather.data.current.temp_c;
-  const weatherCondition = weather.data.current.condition.text;
-  const pressure = weather.data.current.pressure_mb;
-  const humidity = weather.data.current.humidity;
-  const windSpeed = weather.data.current.wind_kph;
-
-  const [time, setTime] = useState("");
-
-  const getLocalTime = () => {
-    const date = new Date();
-    const time = date.toLocaleTimeString([], {
-      hour: "2-digit",
-      minute: "2-digit",
-    });
-    setTime(time);
-  };
-
-  useEffect(() => {
-    getLocalTime();
-  }, []);
+  const {
+    cityName,
+    temperature,
+    weatherCondition,
+    pressure,
+    humidity,
+    windSpeed,
+  } = getWeatherCardConstants({ weather });
 
   return (
     <div className="weather-card">
@@ -36,7 +25,7 @@ export const WeatherCard = ({ weather }) => {
             <MapPin className="icon" />
             {cityName}
           </h3>
-          <p>Today {time}</p>
+          <p>Today {getLocalTime()}</p>
         </div>
         <div className="center">
           <h1>{temperature}°</h1>

@@ -1,5 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
+
 import "./VerticalTemperatureCardStyles.scss";
 import ClearDay from "../../assets/icons/weather-icons/clear-day.svg";
 
