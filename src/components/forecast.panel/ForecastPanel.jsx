@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import PropTypes from "prop-types";
 
 import "./ForecastPanelStyles.scss";
@@ -16,6 +16,13 @@ export const ForecastPanel = ({ weather }) => {
   const [page, setPage] = useState(0);
   const itemsPerPage = 3;
   const pageCount = Math.ceil(dayForecastData.length / itemsPerPage);
+
+  const currentDate = new Date();
+  const currentHour = currentDate.getHours();
+
+  useEffect(() => {
+    setPage(Math.floor(currentHour / itemsPerPage));
+  }, []);
 
   const handlePrevClick = () => {
     if (page > 0) {
@@ -42,7 +49,11 @@ export const ForecastPanel = ({ weather }) => {
       </div>
       <div className="today-cards">
         {items.map((item, i) => (
-          <VerticalTemperatureCard item={item} key={startIndex + i} />
+          <VerticalTemperatureCard
+            item={item}
+            key={startIndex + i}
+            isActive={currentHour - 1 === i}
+          />
         ))}
       </div>
       <div className="week-cards">

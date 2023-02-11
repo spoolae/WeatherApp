@@ -9,4 +9,8 @@
     width: 100%;
     margin: 5px 0;
   }
+
+  &.active {
+    background-color: rgba(180, 220, 255, 0.35);
+  }
 }
