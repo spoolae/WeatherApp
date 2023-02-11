@@ -42,7 +42,8 @@
     "redux": "^4.2.1",
     "redux-persist": "^6.0.0",
     "reset-css": "^5.0.1",
-    "styled-components": "^5.2.0"
+    "styled-components": "^5.2.0",
+    "swiper": "^9.0.4"
   },
   "babelMacros": {
     "twin": {

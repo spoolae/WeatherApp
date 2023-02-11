@@ -1,5 +1,6 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import PropTypes from "prop-types";
+import { register } from "swiper/element/bundle";
 
 import "./ForecastPanelStyles.scss";
 import { ArrowLeft, ArrowRight } from "react-feather";
@@ -10,35 +11,24 @@ import { getWeekForecastData } from "../../constants/getWeekForecastData";
 import { getDayForecastData } from "../../constants/getDayForecastData";
 
 export const ForecastPanel = ({ weather }) => {
+  register();
+
   const weekForecastData = getWeekForecastData({ weather });
   const dayForecastData = getDayForecastData({ weather });
 
-  const [page, setPage] = useState(0);
-  const itemsPerPage = 3;
-  const pageCount = Math.ceil(dayForecastData.length / itemsPerPage);
-
-  const currentDate = new Date();
-  const currentHour = currentDate.getHours();
-
-  useEffect(() => {
-    setPage(Math.floor(currentHour / itemsPerPage));
-  }, []);
+  const swiperEl = document.querySelector("swiper-container");
 
   const handlePrevClick = () => {
-    if (page > 0) {
-      setPage(page - 1);
-    }
+    swiperEl.swiper.slidePrev();
+    swiperEl.swiper.slidePrev();
+    swiperEl.swiper.slidePrev();
   };
 
   const handleNextClick = () => {
-    if (page < pageCount - 1) {
-      setPage(page + 1);
-    }
+    swiperEl.swiper.slideNext();
+    swiperEl.swiper.slideNext();
+    swiperEl.swiper.slideNext();
   };
-
-  const startIndex = page * itemsPerPage;
-  const endIndex = startIndex + itemsPerPage;
-  const items = dayForecastData.slice(startIndex, endIndex);
 
   return (
     <div className="forecast-panel">
@@ -48,13 +38,13 @@ export const ForecastPanel = ({ weather }) => {
         <ArrowRight onClick={handleNextClick} />
       </div>
       <div className="today-cards">
-        {items.map((item, i) => (
-          <VerticalTemperatureCard
-            item={item}
-            key={startIndex + i}
-            isActive={currentHour - 1 === i}
-          />
-        ))}
+        <swiper-container slides-per-view="3">
+          {dayForecastData.map((item, i) => (
+            <swiper-slide key={i}>
+              <VerticalTemperatureCard item={item} />
+            </swiper-slide>
+          ))}
+        </swiper-container>
       </div>
       <div className="week-cards">
         <h3>This Week</h3>
