@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useRef, useEffect } from "react";
 import PropTypes from "prop-types";
 import { register } from "swiper/element/bundle";
 
@@ -16,18 +16,26 @@ export const ForecastPanel = ({ weather }) => {
   const weekForecastData = getWeekForecastData({ weather });
   const dayForecastData = getDayForecastData({ weather });
 
-  const swiperEl = document.querySelector("swiper-container");
+  const swiperContainerRef = useRef(null);
+
+  useEffect(() => {
+    const swiper = swiperContainerRef.current.swiper;
+    const currentDate = new Date();
+    swiper.slideTo(currentDate.getHours());
+  }, []);
 
   const handlePrevClick = () => {
-    swiperEl.swiper.slidePrev();
-    swiperEl.swiper.slidePrev();
-    swiperEl.swiper.slidePrev();
+    const swiper = swiperContainerRef.current.swiper;
+    swiper.slidePrev();
+    swiper.slidePrev();
+    swiper.slidePrev();
   };
 
   const handleNextClick = () => {
-    swiperEl.swiper.slideNext();
-    swiperEl.swiper.slideNext();
-    swiperEl.swiper.slideNext();
+    const swiper = swiperContainerRef.current.swiper;
+    swiper.slideNext();
+    swiper.slideNext();
+    swiper.slideNext();
   };
 
   return (
@@ -38,7 +46,7 @@ export const ForecastPanel = ({ weather }) => {
         <ArrowRight onClick={handleNextClick} />
       </div>
       <div className="today-cards">
-        <swiper-container slides-per-view="3">
+        <swiper-container slides-per-view="3" ref={swiperContainerRef}>
           {dayForecastData.map((item, i) => (
             <swiper-slide key={i}>
               <VerticalTemperatureCard item={item} />
