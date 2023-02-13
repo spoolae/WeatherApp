@@ -11,6 +11,7 @@ import { WeatherParameterCard } from "../components/weather.parameter.card/Weath
 import { ForecastPanel } from "../components/forecast.panel/ForecastPanel.jsx";
 import { mapStateToProps } from "../constants/mapStateToProps";
 import { getWeatherParameters } from "../constants/getWeatherParameters";
+import { Header } from "../components/header/Header.jsx";
 
 export const HomeScreen = ({ weather }) => {
   const dispatch = useDispatch();
@@ -23,6 +24,7 @@ export const HomeScreen = ({ weather }) => {
   return (
     <div className="home-screen">
       <div className="main">
+        <Header />
         <WeatherCard weather={weather} />
         <div className="cards">
           {weatherParameters.map((item) => (
