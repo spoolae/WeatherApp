@@ -12,9 +12,6 @@ export const VerticalTemperatureCard = ({ item }) => {
     ? "vertical-temperature-card active"
     : "vertical-temperature-card";
 
-  console.log(item.condition);
-  console.log(item.isDay);
-
   return (
     <div className={className}>
       <p>{item.time}</p>

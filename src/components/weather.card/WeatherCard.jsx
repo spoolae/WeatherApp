@@ -34,15 +34,15 @@ export const WeatherCard = ({ weather }) => {
         <div className="bottom">
           <p>
             <Thermometer className="icon" />
-            {pressure}hpa
+            {pressure} hpa
           </p>
           <p>
             <Droplet className="icon" />
-            {humidity}%
+            {humidity} %
           </p>
           <p>
             <Wind className="icon" />
-            {windSpeed}km/h
+            {windSpeed} km/h
           </p>
         </div>
       </div>

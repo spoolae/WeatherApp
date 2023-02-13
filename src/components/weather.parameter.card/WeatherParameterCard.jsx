@@ -10,8 +10,7 @@ export const WeatherParameterCard = ({ data }) => {
         <h3>{data.name}</h3>
         <p>{data.description}</p>
         <h3>
-          {data.value}
-          {data.unit}
+          {data.value} {data.unit}
         </h3>
       </div>
       <div className="icon">
