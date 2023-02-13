@@ -2,7 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 
 import "./VerticalTemperatureCardStyles.scss";
-import ClearDay from "../../assets/icons/weather-icons/clear-day.svg";
+import { getWeatherIcon } from "../../constants/getWeatherIcon";
 
 export const VerticalTemperatureCard = ({ item }) => {
   const currentDate = new Date();
@@ -12,10 +12,13 @@ export const VerticalTemperatureCard = ({ item }) => {
     ? "vertical-temperature-card active"
     : "vertical-temperature-card";
 
+  console.log(item.condition);
+  console.log(item.isDay);
+
   return (
     <div className={className}>
       <p>{item.time}</p>
-      <img src={ClearDay} />
+      <img src={getWeatherIcon(item.condition, item.isDay)} />
       <h3>{item.temperature}°</h3>
     </div>
   );
@@ -23,5 +26,4 @@ export const VerticalTemperatureCard = ({ item }) => {
 
 VerticalTemperatureCard.propTypes = {
   item: PropTypes.object,
-  isActive: PropTypes.bool,
 };

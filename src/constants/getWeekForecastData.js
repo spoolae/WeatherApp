@@ -12,21 +12,21 @@ export const getWeekForecastData = ({ weather }) => {
         return {
           day: "Today",
           date,
-          condition: item.day.condition.text,
+          condition: item.day.condition.text.toLowerCase(),
           temperature: Math.round(item.day.avgtemp_c),
         };
       case 1:
         return {
           day: "Tommorow",
           date,
-          condition: item.day.condition.text,
+          condition: item.day.condition.text.toLowerCase(),
           temperature: Math.round(item.day.avgtemp_c),
         };
       default:
         return {
           day,
           date,
-          condition: item.day.condition.text,
+          condition: item.day.condition.text.toLowerCase(),
           temperature: Math.round(item.day.avgtemp_c),
         };
     }

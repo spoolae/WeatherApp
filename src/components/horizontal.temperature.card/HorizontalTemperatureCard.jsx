@@ -2,7 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 
 import "./HorizontalTemperatureCardStyles.scss";
-import ClearDay from "../../assets/icons/weather-icons/clear-day.svg";
+import { getWeatherIcon } from "../../constants/getWeatherIcon";
 
 export const HorizontalTemperatureCard = ({ item }) => {
   return (
@@ -12,7 +12,7 @@ export const HorizontalTemperatureCard = ({ item }) => {
         <p>{item.date}</p>
       </div>
       <h3>{item.temperature}°</h3>
-      <img src={ClearDay} />
+      <img src={getWeatherIcon(item.condition, true)} />
     </div>
   );
 };
