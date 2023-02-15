@@ -10,6 +10,10 @@
     margin: 5px 0;
   }
 
+  &:hover {
+    background-color: rgb(245, 245, 245);
+  }
+
   &.active {
     background-color: rgba(180, 220, 255, 0.35);
   }

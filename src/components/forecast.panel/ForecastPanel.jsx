@@ -1,4 +1,4 @@
-import React, { useRef, useEffect } from "react";
+import React, { useRef, useEffect, useState } from "react";
 import PropTypes from "prop-types";
 import { register } from "swiper/element/bundle";
 
@@ -17,11 +17,18 @@ export const ForecastPanel = ({ weather }) => {
   const dayForecastData = getDayForecastData({ weather });
 
   const swiperContainerRef = useRef(null);
+  const [swiperIndex, setSwiperIndex] = useState(false);
 
   useEffect(() => {
     const swiper = swiperContainerRef.current.swiper;
     const currentDate = new Date();
     swiper.slideTo(currentDate.getHours());
+
+    setSwiperIndex(swiper.activeIndex);
+    swiper.on("slideChange", function () {
+      setSwiperIndex(swiper.activeIndex);
+      console.log(swiper.activeIndex);
+    });
   }, []);
 
   const handlePrevClick = () => {
@@ -41,9 +48,15 @@ export const ForecastPanel = ({ weather }) => {
   return (
     <div className="forecast-panel">
       <div className="heading">
-        <ArrowLeft onClick={handlePrevClick} />
+        <ArrowLeft
+          onClick={handlePrevClick}
+          className={`arrow-icon ${swiperIndex <= 1 ? "inactive" : ""}`}
+        />
         <h3>Today</h3>
-        <ArrowRight onClick={handleNextClick} />
+        <ArrowRight
+          onClick={handleNextClick}
+          className={`arrow-icon ${swiperIndex >= 21 ? "inactive" : ""}`}
+        />
       </div>
       <div className="today-cards">
         <swiper-container slides-per-view="3" ref={swiperContainerRef}>

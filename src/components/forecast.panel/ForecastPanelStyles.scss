@@ -12,6 +12,27 @@
     justify-content: space-between;
     align-items: center;
     padding: 0 50px;
+
+    .arrow-icon {
+      cursor: pointer;
+      padding: 5px;
+      height: 36px;
+      width: 36px;
+      border-radius: 10px;
+
+      &:hover {
+        background-color: rgb(245, 245, 245);
+      }
+
+      &.inactive {
+        color: gray;
+        cursor: default;
+
+        &:hover {
+          background-color: white;
+        }
+      }
+    }
   }
 
   .today-cards {

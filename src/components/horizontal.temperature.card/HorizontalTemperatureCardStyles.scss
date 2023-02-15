@@ -31,4 +31,12 @@
     width: 11.5%;
     margin: 5px 0;
   }
+
+  &:hover {
+    background-color: rgb(245, 245, 245);
+
+    p {
+      color: black;
+    }
+  }
 }
