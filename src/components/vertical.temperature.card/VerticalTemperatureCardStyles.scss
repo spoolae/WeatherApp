@@ -1,8 +1,9 @@
+@import "../../variables";
+
 .vertical-temperature-card {
   margin: 5px;
   padding: 5px;
   border-radius: 15px;
-  // width: 30%;
   text-align: center;
 
   img {
@@ -11,7 +12,7 @@
   }
 
   &:hover {
-    background-color: rgb(245, 245, 245);
+    background-color: $light-grey-color;
   }
 
   &.active {

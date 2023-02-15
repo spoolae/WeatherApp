@@ -1,3 +1,5 @@
+@import "../../variables";
+
 .horizontal-temperature-card {
   margin: 5px;
   padding: 10px;
@@ -33,7 +35,7 @@
   }
 
   &:hover {
-    background-color: rgb(245, 245, 245);
+    background-color: $light-grey-color;
 
     p {
       color: black;

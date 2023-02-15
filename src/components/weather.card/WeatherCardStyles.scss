@@ -1,12 +1,11 @@
-$card-bg-color: rgb(180, 220, 255);
-$text-color: rgb(13, 64, 109);
+@import "../../variables";
 
 .weather-card {
   width: 100%;
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
-  background-color: $card-bg-color;
+  background-color: $light-primary-color;
   border-radius: 20px;
   display: flex;
   align-items: center;
@@ -22,7 +21,7 @@ $text-color: rgb(13, 64, 109);
   p {
     display: flex;
     align-items: center;
-    color: $text-color;
+    color: $primary-color;
   }
 
   .icon {

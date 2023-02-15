@@ -1,21 +1,21 @@
+@import "../variables";
+
 .home-screen {
   display: flex;
 
   .main {
-    padding: 25px 40px;
     width: 60vw;
     min-width: min-content;
-    flex-grow: 4;
     display: flex;
+    flex: 1;
     flex-direction: column;
     gap: 25px;
+    padding: 25px 40px;
 
     .cards {
-      flex-grow: 4;
-      width: 100%;
       display: flex;
-      gap: 25px;
       flex-wrap: wrap;
+      gap: 25px;
     }
   }
 

@@ -1,6 +1,7 @@
+@import "../../variables";
+
 .forecast-panel {
-  // height: 100vh;
-  border-left: 2px solid rgb(235, 235, 235);
+  border-left: 2px solid $light-grey-color;
   display: flex;
   flex-direction: column;
   gap: 25px;
@@ -21,11 +22,11 @@
       border-radius: 10px;
 
       &:hover {
-        background-color: rgb(245, 245, 245);
+        background-color: $light-grey-color;
       }
 
       &.inactive {
-        color: gray;
+        color: $grey-color;
         cursor: default;
 
         &:hover {

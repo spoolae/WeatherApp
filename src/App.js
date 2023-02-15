@@ -1,5 +1,5 @@
 import React from "react";
-import HomeScreen from "./screens/HomeScreen.jsx";
+import { HomeScreen } from "./screens/HomeScreen.jsx";
 import "reset-css";
 import "./App.scss";
 

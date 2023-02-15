@@ -13,7 +13,7 @@ import { mapStateToProps } from "../constants/mapStateToProps";
 import { getWeatherParameters } from "../constants/getWeatherParameters";
 import { Header } from "../components/header/Header.jsx";
 
-export const HomeScreen = ({ weather }) => {
+const HomeScreen = ({ weather }) => {
   const dispatch = useDispatch();
   const weatherParameters = getWeatherParameters({ weather });
 
@@ -41,4 +41,5 @@ HomeScreen.propTypes = {
   weather: PropTypes.object,
 };
 
-export default connect(mapStateToProps)(HomeScreen);
+const ConnectedHomeScreen = connect(mapStateToProps)(HomeScreen);
+export { ConnectedHomeScreen as HomeScreen };
