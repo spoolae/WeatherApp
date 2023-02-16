@@ -4,8 +4,8 @@
   display: flex;
 
   .main {
+    margin-right: 30vw;
     width: 60vw;
-    min-width: min-content;
     display: flex;
     flex: 1;
     flex-direction: column;
@@ -20,6 +20,8 @@
   }
 
   .forecast-panel {
+    position: fixed;
+    right: 0;
     width: 30vw;
   }
 }
