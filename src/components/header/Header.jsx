@@ -9,9 +9,15 @@ export const Header = () => {
     <div className="header">
       <SearchInput />
       <div className="icons-container">
-        <RotateCcw className="icon" />
-        <Map className="icon" />
-        <Moon className="icon" />
+        <div>
+          <RotateCcw className="icon" />
+        </div>
+        <div>
+          <Map className="icon" />
+        </div>
+        <div>
+          <Moon className="icon" />
+        </div>
       </div>
     </div>
   );

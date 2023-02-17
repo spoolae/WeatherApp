@@ -19,28 +19,28 @@ export const getWeatherParameters = ({ weather }) => {
   return [
     {
       name: "Wind",
-      description: "Current wind speed",
+      description: "Today wind speed",
       value: weather.data.current.wind_kph,
       unit: "km/h",
       icon: weather.data.current.wind_kph < 52 ? Wind : DustWind,
     },
     {
       name: "Humidity",
-      description: "Current humidity",
+      description: "Today humidity",
       value: weather.data.current.humidity,
       unit: "%",
       icon: weather.data.current.humidity < 75 ? Raindrop : Raindrops,
     },
     {
       name: "Pressure",
-      description: "Current pressure",
+      description: "Today pressure",
       value: weather.data.current.pressure_mb,
       unit: "hpa",
       icon: Pressure,
     },
     {
       name: "UV Index",
-      description: "Current UV index",
+      description: "Today UV index",
       value: weather.data.current.uv,
       unit: "",
       icon: (() => {

@@ -1,3 +1,4 @@
+@import "variables";
 @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 
 * {
@@ -13,17 +14,70 @@ body {
   font-family: "Poppins", sans-serif;
 }
 
-h1 {
-  font-size: 100px;
-  font-weight: 600;
+@media only screen and (max-width: 767px) {
+  h1 {
+    font-size: 70px;
+    font-weight: 600;
+  }
+
+  h3 {
+    font-size: 18px;
+    font-weight: 500;
+  }
+
+  p {
+    font-size: 13px;
+    font-weight: 400;
+  }
 }
 
-h3 {
-  font-size: 24px;
-  font-weight: 500;
+@media only screen and (min-width: 768px) and (max-width: 1023px) {
+  h1 {
+    font-size: 80px;
+    font-weight: 600;
+  }
+
+  h3 {
+    font-size: 20px;
+    font-weight: 500;
+  }
+
+  p {
+    font-size: 14px;
+    font-weight: 400;
+  }
 }
 
-p {
-  font-size: 16px;
-  font-weight: 400;
+@media only screen and (min-width: 1024px) and (max-width: 1279px) {
+  h1 {
+    font-size: 90px;
+    font-weight: 600;
+  }
+
+  h3 {
+    font-size: 22px;
+    font-weight: 500;
+  }
+
+  p {
+    font-size: 15px;
+    font-weight: 400;
+  }
+}
+
+@media only screen and (min-width: 1280px) {
+  h1 {
+    font-size: 100px;
+    font-weight: 600;
+  }
+
+  h3 {
+    font-size: 24px;
+    font-weight: 500;
+  }
+
+  p {
+    font-size: 16px;
+    font-weight: 400;
+  }
 }

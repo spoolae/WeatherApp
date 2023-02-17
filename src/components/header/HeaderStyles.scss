@@ -9,9 +9,24 @@
     position: absolute;
     right: 0;
 
-    .icon {
+    > div {
+      display: inline-block;
+      height: 50px;
+      width: 50px;
+      border-radius: 25px;
+      margin: 5px;
       cursor: pointer;
-      margin-left: 25px;
+      position: relative;
+
+      .icon {
+        position: absolute;
+        inset: 0;
+        margin: auto;
+      }
+
+      &:hover {
+        background-color: $light-grey-color;
+      }
     }
   }
 }
