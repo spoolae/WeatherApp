@@ -1,12 +1,12 @@
 import React from "react";
-import { HomeScreen } from "./screens/HomeScreen.jsx";
 import "reset-css";
-import "./App.scss";
-
 import { Provider } from "react-redux";
-import store from "./redux/configureStore.js";
 import { PersistGate } from "redux-persist/integration/react";
 import { persistStore } from "redux-persist";
+
+import "./App.scss";
+import store from "./redux/configureStore.js";
+import { HomeScreen } from "./screens/HomeScreen.jsx";
 
 let persistor = persistStore(store);
 

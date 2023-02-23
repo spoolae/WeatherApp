@@ -1,7 +1,22 @@
-@import "../variables";
+@import "../theme.scss";
 
 .home-screen {
   display: flex;
+  background-color: var(--background-color);
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  p,
+  a,
+  span,
+  .icon,
+  .arrow-icon,
+  .search-icon {
+    color: var(--text-color);
+  }
 
   .main {
     margin-right: 30vw;
@@ -28,7 +43,6 @@
 
 @media only screen and (max-width: 767px) {
   .home-screen {
-    display: flex;
     flex-direction: column;
 
     .main {
@@ -50,7 +64,6 @@
 
 @media only screen and (min-width: 768px) and (max-width: 1023px) {
   .home-screen {
-    display: flex;
     flex-direction: column;
 
     .main {

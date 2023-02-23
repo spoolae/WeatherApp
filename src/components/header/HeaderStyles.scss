@@ -1,5 +1,3 @@
-@import "../../variables";
-
 .header {
   position: relative;
   display: flex;
@@ -25,7 +23,7 @@
       }
 
       &:hover {
-        background-color: $light-grey-color;
+        background-color: var(--light-grey-color);
       }
     }
   }

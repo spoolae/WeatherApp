@@ -13,7 +13,7 @@ import { mapStateToProps } from "../constants/mapStateToProps";
 import { getWeatherParameters } from "../constants/getWeatherParameters";
 import { Header } from "../components/header/Header.jsx";
 
-const HomeScreen = ({ weather }) => {
+const HomeScreen = ({ weather, isDark }) => {
   const dispatch = useDispatch();
   const weatherParameters = getWeatherParameters({ weather });
 
@@ -22,7 +22,7 @@ const HomeScreen = ({ weather }) => {
   }, []);
 
   return (
-    <div className="home-screen">
+    <div className={isDark ? "home-screen theme-dark" : "home-screen"}>
       <div className="main">
         <Header />
         <WeatherCard weather={weather} />
@@ -39,6 +39,7 @@ const HomeScreen = ({ weather }) => {
 
 HomeScreen.propTypes = {
   weather: PropTypes.object,
+  isDark: PropTypes.bool,
 };
 
 const ConnectedHomeScreen = connect(mapStateToProps)(HomeScreen);

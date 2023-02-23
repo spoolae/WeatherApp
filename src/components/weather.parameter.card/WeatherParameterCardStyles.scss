@@ -1,9 +1,7 @@
-@import "../../variables";
-
 .weather-parameter-card {
   display: flex;
   flex-basis: calc(50% - 12.5px);
-  background-color: rgb(245, 245, 245);
+  background-color: var(--light-grey-color);
   padding: 25px;
   border-radius: 20px;
 

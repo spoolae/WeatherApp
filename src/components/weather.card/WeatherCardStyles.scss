@@ -1,11 +1,9 @@
-@import "../../variables";
-
 .weather-card {
   width: 100%;
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
-  background-color: $light-primary-color;
+  background-color: var(--light-primary-color);
   border-radius: 20px;
   display: flex;
   align-items: center;
@@ -21,7 +19,7 @@
   p {
     display: flex;
     align-items: center;
-    color: $primary-color;
+    color: var(--primary-color);
   }
 
   .icon {
