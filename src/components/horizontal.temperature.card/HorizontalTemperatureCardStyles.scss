@@ -23,7 +23,7 @@
   }
 
   p {
-    color: gray;
+    color: var(--grey-color);
   }
 
   img,
@@ -37,7 +37,7 @@
     background-color: var(--light-grey-color);
 
     p {
-      color: var(--black-color);
+      color: var(--text-color);
     }
   }
 }
