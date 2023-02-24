@@ -1,0 +1,10 @@
+.custom-tooltip {
+  background-color: var(--background-color);
+  padding: 10px;
+  border-radius: 10px;
+
+  .value {
+    color: var(--text-color);
+    margin-top: 5px;
+  }
+}
