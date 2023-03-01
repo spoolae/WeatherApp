@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { useDispatch } from "react-redux";
@@ -15,10 +15,11 @@ import { Header } from "../components/header/Header.jsx";
 
 const HomeScreen = ({ weather, isDark }) => {
   const dispatch = useDispatch();
-  const weatherParameters = getWeatherParameters({ weather });
+  const [weatherParameters, setWeatherParameters] = useState([]);
 
   useEffect(() => {
-    dispatch(fetchWeather());
+    dispatch(fetchWeather("Zerkow"));
+    setWeatherParameters(getWeatherParameters({ weather }));
   }, []);
 
   return (

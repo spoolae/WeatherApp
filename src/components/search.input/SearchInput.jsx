@@ -12,6 +12,7 @@ export const SearchInput = () => {
         type="search"
         placeholder="Search location"
         required
+        title="Please enter a city"
         onFocus={() => setValid(true)}
         onBlur={() => setValid(false)}
       />

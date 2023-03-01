@@ -28,7 +28,7 @@ export const WeatherCard = ({ weather }) => {
           <p>Today {getLocalTime()}</p>
         </div>
         <div className="center">
-          <h1>{temperature}°</h1>
+          <h1>{parseInt(temperature)}°</h1>
           <p>{weatherCondition}</p>
         </div>
         <div className="bottom">
