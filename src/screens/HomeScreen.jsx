@@ -18,9 +18,25 @@ const HomeScreen = ({ weather, isDark }) => {
   const [weatherParameters, setWeatherParameters] = useState([]);
 
   useEffect(() => {
-    dispatch(fetchWeather("Zerkow"));
-    setWeatherParameters(getWeatherParameters({ weather }));
+    try {
+      dispatch(fetchWeather("Zerkow"));
+    } catch (error) {
+      console.log(error);
+    }
   }, []);
+
+  useEffect(() => {
+    try {
+      setWeatherParameters(getWeatherParameters({ weather }));
+    } catch (error) {
+      console.log(error);
+    }
+  }, [weather]);
+
+  if (weather.data.error || !weather.data) {
+    console.log(weather.data);
+    return <div>Loading...</div>;
+  }
 
   return (
     <div className={isDark ? "home-screen theme-dark" : "home-screen"}>

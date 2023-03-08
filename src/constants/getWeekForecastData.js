@@ -1,5 +1,7 @@
 export const getWeekForecastData = ({ weather }) => {
-  return weather.data.forecast.forecastday.map((item, i) => {
+  const forecastData = weather?.data?.forecast?.forecastday || [];
+
+  return forecastData.map((item, i) => {
     let day = new Date(item.date).toLocaleDateString("en-US", {
       weekday: "long",
     });
@@ -17,7 +19,7 @@ export const getWeekForecastData = ({ weather }) => {
         };
       case 1:
         return {
-          day: "Tommorow",
+          day: "Tomorrow",
           date,
           condition: item.day.condition.text.toLowerCase(),
           temperature: Math.round(item.day.avgtemp_c),

@@ -16,10 +16,6 @@ import UV9 from "../assets/icons/weather-icons/uv-index-9.svg";
 import UV10 from "../assets/icons/weather-icons/uv-index-10.svg";
 
 export const getWeatherParameters = ({ weather }) => {
-  if (!weather) {
-    return [];
-  }
-
   return [
     {
       name: "Wind",
