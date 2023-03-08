@@ -12,6 +12,7 @@ import { ForecastPanel } from "../components/forecast.panel/ForecastPanel.jsx";
 import { mapStateToProps } from "../constants/mapStateToProps";
 import { getWeatherParameters } from "../constants/getWeatherParameters";
 import { Header } from "../components/header/Header.jsx";
+import { fetchCities } from "../redux/searchCitiesSlice";
 
 const HomeScreen = ({ weather, isDark }) => {
   const dispatch = useDispatch();
@@ -20,6 +21,7 @@ const HomeScreen = ({ weather, isDark }) => {
   useEffect(() => {
     try {
       dispatch(fetchWeather("Zerkow"));
+      dispatch(fetchCities(""));
     } catch (error) {
       console.log(error);
     }
@@ -57,6 +59,7 @@ const HomeScreen = ({ weather, isDark }) => {
 HomeScreen.propTypes = {
   weather: PropTypes.object,
   isDark: PropTypes.bool,
+  searchCities: PropTypes.object,
 };
 
 const ConnectedHomeScreen = connect(mapStateToProps)(HomeScreen);

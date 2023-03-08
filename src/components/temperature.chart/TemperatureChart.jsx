@@ -21,7 +21,6 @@ const TemperatureChart = ({ weather, isDark }) => {
             "--chart-color"
           )
     );
-    console.log(primaryColor);
   }, [isDark]);
 
   const CustomTooltip = ({ active, payload, label }) => {
