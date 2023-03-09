@@ -5,15 +5,13 @@ import { PropTypes } from "prop-types";
 import "./DropDownListStyles.scss";
 import { mapStateToProps } from "../../../constants/mapStateToProps";
 import { fetchWeather } from "../../../redux/weatherSlice";
-import { fetchCities } from "../../../redux/searchCitiesSlice";
 
-const DropDownList = ({ searchCities }) => {
+const DropDownList = ({ searchCities, handleInputChange }) => {
   const dispatch = useDispatch();
 
   const handleClick = (item) => {
     dispatch(fetchWeather(item.name));
-    dispatch(fetchCities(""));
-    //Здесь должно очищаться поле поиска.
+    handleInputChange("");
   };
 
   if (!searchCities.data.length) {
@@ -33,6 +31,7 @@ const DropDownList = ({ searchCities }) => {
 
 DropDownList.propTypes = {
   searchCities: PropTypes.object,
+  handleInputChange: PropTypes.function,
 };
 
 const ConnectedDropDownList = connect(mapStateToProps)(DropDownList);

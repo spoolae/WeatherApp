@@ -11,9 +11,9 @@ export const SearchInput = () => {
   const [, setValid] = useState(false);
   const dispatch = useDispatch();
 
-  const handleInputChange = (event) => {
-    setSearchQuery(event.target.value);
-    dispatch(fetchCities(event.target.value));
+  const handleInputChange = (value) => {
+    setSearchQuery(value);
+    dispatch(fetchCities(value));
   };
 
   return (
@@ -25,13 +25,13 @@ export const SearchInput = () => {
           required
           title="Please enter a city"
           value={searchQuery}
-          onChange={handleInputChange}
+          onChange={(e) => handleInputChange(e.target.value)}
           onFocus={() => setValid(true)}
           onBlur={() => setValid(false)}
         />
         <Search className="search-icon" />
       </form>
-      <DropDownList />
+      <DropDownList handleInputChange={handleInputChange} />
     </div>
   );
 };

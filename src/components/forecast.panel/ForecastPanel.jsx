@@ -27,7 +27,6 @@ export const ForecastPanel = ({ weather }) => {
     setSwiperIndex(swiper.activeIndex);
     swiper.on("slideChange", function () {
       setSwiperIndex(swiper.activeIndex);
-      console.log(swiper.activeIndex);
     });
   }, []);
 
