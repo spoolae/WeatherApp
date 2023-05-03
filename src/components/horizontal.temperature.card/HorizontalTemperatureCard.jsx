@@ -2,7 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 
 import "./HorizontalTemperatureCardStyles.scss";
-import { getWeatherIcon } from "../../constants/getWeatherIcon";
+import { getWeatherIcon } from "../../utils/getWeatherIcon";
 
 export const HorizontalTemperatureCard = ({ item }) => {
   return (

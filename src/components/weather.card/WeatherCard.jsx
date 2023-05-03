@@ -4,8 +4,8 @@ import { Thermometer, MapPin, Wind, Droplet } from "react-feather";
 
 import "./WeatherCardStyles.scss";
 import { TemperatureChart } from "../temperature.chart/TemperatureChart.jsx";
-import { getLocalTime } from "../../constants/getLocalTime";
-import { getWeatherCardConstants } from "../../constants/getWeatherCardConstants";
+import { getLocalTime } from "../../utils/getLocalTime";
+import { getWeatherCardConstants } from "../../utils/getWeatherCardConstants";
 
 export const WeatherCard = ({ weather }) => {
   const {

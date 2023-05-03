@@ -2,7 +2,7 @@ import React, { useMemo } from "react";
 import PropTypes from "prop-types";
 
 import "./VerticalTemperatureCardStyles.scss";
-import { getWeatherIcon } from "../../constants/getWeatherIcon";
+import { getWeatherIcon } from "../../utils/getWeatherIcon";
 
 export const VerticalTemperatureCard = ({ item }) => {
   const currentHour = useMemo(() => new Date().getHours(), []);

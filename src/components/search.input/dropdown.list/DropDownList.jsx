@@ -3,14 +3,16 @@ import { connect, useDispatch } from "react-redux";
 import { PropTypes } from "prop-types";
 
 import "./DropDownListStyles.scss";
-import { mapStateToProps } from "../../../constants/mapStateToProps";
+import { mapStateToProps } from "../../../utils/mapStateToProps";
 import { fetchWeather } from "../../../redux/weatherSlice";
+import { addCityToHistory } from "../../../redux/searchHistorySlice";
 
 const DropDownList = ({ searchCities, handleInputChange }) => {
   const dispatch = useDispatch();
 
   const handleClick = (item) => {
     dispatch(fetchWeather(item.name));
+    dispatch(addCityToHistory({ city: item.name }));
     handleInputChange("");
   };
 

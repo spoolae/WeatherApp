@@ -5,7 +5,7 @@ import { SearchInput } from "../search.input/SearchInput.jsx";
 import { Moon, RotateCcw, Map } from "react-feather";
 import { setDarkMode } from "../../redux/themeSlice";
 import { connect, useDispatch } from "react-redux";
-import { mapStateToProps } from "../../constants/mapStateToProps";
+import { mapStateToProps } from "../../utils/mapStateToProps";
 import { PropTypes } from "prop-types";
 
 const Header = ({ isDark }) => {

@@ -7,8 +7,8 @@ import { ArrowLeft, ArrowRight } from "react-feather";
 import { VerticalTemperatureCard } from "../vertical.temperature.card/VerticalTemperatureCard.jsx";
 import { HorizontalTemperatureCard } from "../horizontal.temperature.card/HorizontalTemperatureCard.jsx";
 import { EmptyHorizontalTemperatureCard } from "../horizontal.temperature.card/EmptyHorizontalTemperatureCard.jsx";
-import { getWeekForecastData } from "../../constants/getWeekForecastData";
-import { getDayForecastData } from "../../constants/getDayForecastData";
+import { getWeekForecastData } from "../../utils/getWeekForecastData";
+import { getDayForecastData } from "../../utils/getDayForecastData";
 
 export const ForecastPanel = ({ weather }) => {
   register();

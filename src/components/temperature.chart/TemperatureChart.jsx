@@ -3,9 +3,9 @@ import PropTypes from "prop-types";
 import { LineChart, Line, XAxis, Tooltip, ResponsiveContainer } from "recharts";
 
 import "./TemperatureChartStyles.scss";
-import { getChartData } from "../../constants/getChartData";
+import { getChartData } from "../../utils/getChartData";
 import { connect } from "react-redux";
-import { mapStateToProps } from "../../constants/mapStateToProps";
+import { mapStateToProps } from "../../utils/mapStateToProps";
 
 const TemperatureChart = ({ weather, isDark }) => {
   const chartData = getChartData({ weather });

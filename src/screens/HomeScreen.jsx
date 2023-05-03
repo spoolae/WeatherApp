@@ -9,8 +9,8 @@ import { fetchWeather } from "../redux/weatherSlice.js";
 import { WeatherCard } from "../components/weather.card/WeatherCard.jsx";
 import { WeatherParameterCard } from "../components/weather.parameter.card/WeatherParameterCard.jsx";
 import { ForecastPanel } from "../components/forecast.panel/ForecastPanel.jsx";
-import { mapStateToProps } from "../constants/mapStateToProps";
-import { getWeatherParameters } from "../constants/getWeatherParameters";
+import { mapStateToProps } from "../utils/mapStateToProps";
+import { getWeatherParameters } from "../utils/getWeatherParameters";
 import { Header } from "../components/header/Header.jsx";
 import { fetchCities } from "../redux/searchCitiesSlice";
 
