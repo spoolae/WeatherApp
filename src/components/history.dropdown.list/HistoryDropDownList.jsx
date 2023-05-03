@@ -13,7 +13,6 @@ const HistoryDropDownList = ({ searchHistory }) => {
   const dispatch = useDispatch();
 
   const handleInputChange = (value) => {
-    // setSearchQuery(value);
     dispatch(fetchCities(value));
   };
 
