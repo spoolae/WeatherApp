@@ -2,12 +2,13 @@ import React from "react";
 import { connect, useDispatch } from "react-redux";
 import { PropTypes } from "prop-types";
 
-import "./DropDownListStyles.scss";
+import "./SearchDropDownListStyles.scss";
 import { mapStateToProps } from "../../../utils/mapStateToProps";
 import { fetchWeather } from "../../../redux/weatherSlice";
 import { addCityToHistory } from "../../../redux/searchHistorySlice";
+import { SearchDropDownItem } from "./SearchDropDownItem.jsx";
 
-const DropDownList = ({ searchCities, handleInputChange }) => {
+const SearchDropDownList = ({ searchCities, handleInputChange }) => {
   const dispatch = useDispatch();
 
   const handleClick = (item) => {
@@ -20,21 +21,22 @@ const DropDownList = ({ searchCities, handleInputChange }) => {
     return null;
   }
   return (
-    <div className="drop-down-list">
+    <div className="search-drop-down-list">
       {searchCities.data.map((item) => (
-        <p
+        <SearchDropDownItem
           key={item.id}
-          onClick={() => handleClick(item)}
-        >{`${item.name}, ${item.country}`}</p>
+          item={item}
+          handleClick={handleClick}
+        />
       ))}
     </div>
   );
 };
 
-DropDownList.propTypes = {
+SearchDropDownList.propTypes = {
   searchCities: PropTypes.object,
-  handleInputChange: PropTypes.function,
+  handleInputChange: PropTypes.func,
 };
 
-const ConnectedDropDownList = connect(mapStateToProps)(DropDownList);
-export { ConnectedDropDownList as DropDownList };
+const ConnectedDropDownList = connect(mapStateToProps)(SearchDropDownList);
+export { ConnectedDropDownList as SearchDropDownList };

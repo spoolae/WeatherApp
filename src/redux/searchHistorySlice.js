@@ -1,6 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-const MAX_HISTORY_LENGTH = 3;
+const MAX_HISTORY_LENGTH = 5;
 
 const searchHistorySlice = createSlice({
   name: "searchHistory",

@@ -4,7 +4,7 @@ import { Search } from "react-feather";
 
 import "./SearchInputStyles.scss";
 import { fetchCities } from "../../redux/searchCitiesSlice";
-import { DropDownList } from "./dropdown.list/DropDownList.jsx";
+import { SearchDropDownList } from "./search.dropdown.list/SearchDropDownList.jsx";
 
 export const SearchInput = () => {
   const [searchQuery, setSearchQuery] = useState("");
@@ -31,7 +31,7 @@ export const SearchInput = () => {
         />
         <Search className="search-icon" />
       </form>
-      <DropDownList handleInputChange={handleInputChange} />
+      <SearchDropDownList handleInputChange={handleInputChange} />
     </div>
   );
 };

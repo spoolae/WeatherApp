@@ -7,6 +7,7 @@ import { setDarkMode } from "../../redux/themeSlice";
 import { connect, useDispatch } from "react-redux";
 import { mapStateToProps } from "../../utils/mapStateToProps";
 import { PropTypes } from "prop-types";
+import { HistoryDropDownList } from "../history.dropdown.list/HistoryDropDownList.jsx";
 
 const Header = ({ isDark }) => {
   const dispatch = useDispatch();
@@ -20,6 +21,7 @@ const Header = ({ isDark }) => {
       <div className="icons-container">
         <div>
           <RotateCcw className="icon" />
+          <HistoryDropDownList />
         </div>
         <div>
           <Map className="icon" />
