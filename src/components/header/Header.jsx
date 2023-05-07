@@ -4,7 +4,7 @@ import PropTypes from "prop-types";
 
 import "./HeaderStyles.scss";
 import { SearchInput } from "../search.input/SearchInput.jsx";
-import { Moon, RotateCcw, Map } from "react-feather";
+import { Moon, Bookmark } from "react-feather";
 import { setDarkMode } from "../../redux/themeSlice";
 import { mapStateToProps } from "../../utils/mapStateToProps";
 import { HistoryDropDownList } from "../history.dropdown.list/HistoryDropDownList.jsx";
@@ -26,11 +26,8 @@ const Header = ({ isDark }) => {
       <SearchInput />
       <div className="icons-container">
         <div onClick={toggleHistory}>
-          <RotateCcw className="icon" />
+          <Bookmark className="icon" />
           {showHistory && <HistoryDropDownList toggleHistory={toggleHistory} />}
-        </div>
-        <div>
-          <Map className="icon" />
         </div>
         <div onClick={switchTheme}>
           <Moon className="icon" />
